@@ -24,8 +24,6 @@ function App() {
   // Search
   const [searchQuery, setSearchQuery] = useState('')
 
-  console.log('searchQuery', searchQuery)
-
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (!formData.name && !formData.email) return
@@ -110,17 +108,6 @@ function App() {
         <button className="">{isEditing ? 'Update' : 'Add'}</button>
       </form>
       {/* Render the added user details just below the form */}
-
-      {/* {users.map((user, index) => (
-        <div key={index} className="userDetailsCard">
-          <h4>{user.name}</h4>
-          <span>{user.email}</span>
-          <div className="buttonContainer">
-            <button onClick={() => handleEdit(index)}>Edit</button>
-            <button onClick={() => handleDelete(index)}>Delete</button>
-          </div>
-        </div>
-      ))} */}
 
       {filteredUsers.length === 0 ? (
         <p>No Users Found</p>
